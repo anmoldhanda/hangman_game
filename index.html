@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hangman game</title>
+    <!-- =============================== custom css =============================== -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hangman_game_container">
+      <div class="hangman_photobox">
+        <img src="images/hangman-0.svg" alt="hangman svg pic" class="hangman_pic">
+        <h2 class="headline">hangman game</h2>
+      </div>
+      <div class="hangman_game_box">
+        <ul class="word_display_ul"></ul>
+        <div class="hint_text_and_total_guess_counts_container">
+          <h4 class="hint_text">hint: <b></b></h4>
+          <h4 class="guess_counts_text">incorrect guesses : <b>0/5</b></h4>
+        </div>
+        <div class="keyboard_container"></div>
+      </div>
+    </div>
+    <!-- =============================== overlay notification =============================== -->
+    <div class="overlay_notification_container">
+      <div class="overlay_notification_box">
+        <div class="winlose_gif_photobox">
+          <img src="images/win.gif" alt="win lose gif" class="winlose_gif">
+        </div>
+        <div class="contentbox">
+          <h4 class="winlose_title"></h4>
+          <p class="result_description"> <b></b></p>
+        </div>
+        <button class="playagain_btn">play again</button>
+      </div>
+    </div>
+    <!-- =============================== custom js =============================== -->
+    <script src="database.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

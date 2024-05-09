@@ -1,0 +1,209 @@
+/* ===================================================== google fonts ===================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
+:root {
+  --blue-color: cornflowerblue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code", monospace;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.hangman_game_container {
+  box-shadow: 0 0 2rem 1rem #c7cbf2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 80vw;
+}
+
+.hangman_pic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.headline {
+  text-transform: capitalize;
+  font-weight: normal;
+  text-align: center;
+}
+
+.keyboard_btns {
+  width: calc(100% / 8 - 12px);
+  background: var(--blue-color);
+  color: white;
+  border-radius: 5px;
+  text-transform: capitalize;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.keyboard_btns:hover {
+  background: white;
+  color: var(--blue-color);
+}
+
+.keyboard_btns:disabled {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.word_display_ul {
+  display: flex;
+  gap: 10px;
+  list-style-type: none;
+}
+
+.letters {
+  border-bottom: 2px solid black;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 1.5rem;
+  width: 30px;
+  margin: 0 0 2rem;
+}
+
+.letters.guessed_letter {
+  margin: 0 0 1.5rem;
+  border-color: transparent;
+}
+
+.hangman_game_box {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hint_text b {
+  font-weight: 600;
+}
+
+.guess_counts_text b {
+  color: crimson;
+}
+
+.hint_text,
+.guess_counts_text {
+  font-weight: normal;
+}
+
+/* ================================================== overlay notification ================================================== */
+.overlay_notification_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  pointer-events: none;
+}
+
+.overlay_notification_container.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay_notification_box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.winlose_gif_photobox {
+  height: 7rem;
+  width: 7rem;
+}
+
+.winlose_gif {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contentbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-transform: capitalize;
+}
+
+.winlose_title {
+  font-weight: 700;
+  color: var(--blue-color);
+  font-size: 1.5rem;
+}
+
+.playagain_btn {
+  background: var(--blue-color);
+  color: white;
+  text-transform: capitalize;
+  padding: 7px 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.playagain_btn:hover {
+  background: white;
+  color: var(--blue-color);
+  border: 1px solid var(--blue-color);
+}
+
+.result_description b {
+  font-weight: 600;
+  color: var(--blue-color);
+}
+
+/* ================================================ media query ================================================ */
+@media screen and (max-width: 750px) {
+  .hangman_game_container {
+    flex-direction: column;
+    max-width: 90vw;
+    padding: 1rem;
+  }
+
+  .hangman_photobox {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .keyboard_btns {
+    width: calc(100% / 8 - -10px);
+  }
+}
