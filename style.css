@@ -196,14 +196,25 @@ body {
     flex-direction: column;
     max-width: 90vw;
     padding: 1rem;
+    gap: 5rem;
+  }
+
+  .headline {
+    margin: 1rem 0 0;
   }
 
   .hangman_photobox {
-    height: 10rem;
-    width: 10rem;
+    height: 50%;
+    width: 70%;
   }
 
   .keyboard_btns {
     width: calc(100% / 8 - -10px);
+  }
+
+  .letters {
+    font-size: 1rem;
+    width: 1em;
+    margin: 2rem 0;
   }
 }
