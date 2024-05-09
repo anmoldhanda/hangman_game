@@ -62,7 +62,9 @@ body {
 
 .keyboard_btns:disabled {
   opacity: 0.8;
-  pointer-events: none;
+  /* pointer-events: none; */
+  color: crimson;
+  border: 1px solid crimson;
 }
 
 .word_display_ul {
@@ -186,6 +188,10 @@ body {
   border: 1px solid var(--blue-color);
 }
 
+.result_description {
+  text-align: center;
+}
+
 .result_description b {
   font-weight: 600;
   color: var(--blue-color);
@@ -217,5 +223,9 @@ body {
     font-size: 1rem;
     width: 1em;
     margin: 2rem 0;
+  }
+
+  .overlay_notification_box {
+    max-width: 90vw;
   }
 }

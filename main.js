@@ -39,7 +39,7 @@ const generate_Random_hint_text_and_word = () => {
 // =============================== show hide & manipulate the overlay notification container's content according to the user's winning or losing state ===============================
 const GameOver = (is_userwon) => {
     setTimeout(() => {
-        result_description.innerHTML = is_userwon ? `you won the game`:`the correct word was ${current_word}`;
+        result_description.innerHTML = is_userwon ? `you won the game`:`the correct word was <b>${current_word}</b>`;
         winlose_gif.src = is_userwon ? `images/win.gif`: `images/lose.gif`;
         winlose_title.innerText = is_userwon ? `congratstulations`: `game over`;
         overlay_notification_container.classList.add("show");
@@ -53,7 +53,7 @@ playagain_btn.onclick = function() {
 const initialize_game = (clicked_button, clicked_letter_text) => {
     if(current_word.includes(clicked_letter_text)) {
         // ========================= includes methods works like our search bar functionality it will check if the text we pass through out the parameter exists in the particular elements then it wil return text conditionally clicked_letter_text is the string.fromcharcode(keybaord_code_into_string) =========================
-        console.log(`${current_word} exists on the word`);
+        console.log(`${clicked_letter_text} exists on the word ${current_word}`);
         [...current_word].forEach((each_li_text, index)=>{
             if(each_li_text === clicked_letter_text) {
                 correct_letters_arr.push(each_li_text);
@@ -64,11 +64,12 @@ const initialize_game = (clicked_button, clicked_letter_text) => {
     }
     else {
         // ========================= increment the guess count whenever user's gueesed the wrong guess & update the hangman pic =========================
-        console.log(`${current_word} doesn't exists on the word`);
+        console.log(`${clicked_letter_text} doesn't exists on the word ${current_word}`);
         wrong_guess_count++;
         hangman_pic.src = `images/hangman-${wrong_guess_count}.svg`;
     }
     clicked_button.disabled = true;
+    clicked_button.setAttribute("title","Disabled");
     guess_counts_text.innerHTML = `${wrong_guess_count} / ${total_guess_count}`;
     if(wrong_guess_count === total_guess_count) {
         return GameOver(false);
