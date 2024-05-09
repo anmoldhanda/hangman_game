@@ -10,7 +10,7 @@ const winlose_gif = document.querySelector(".winlose_gif");
 const winlose_title = document.querySelector(".winlose_title");
 let current_word;
 let correct_letters_arr;
-let total_guess_count = 5;
+let total_guess_count = 6;
 let wrong_guess_count = 0;
 
 // ========================= resetting all the global variables of game and updating into the DOM as the page loads show it as starting of a new game ========================= 
