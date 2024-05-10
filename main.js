@@ -51,8 +51,8 @@ playagain_btn.onclick = function() {
 }
 
 const initialize_game = (clicked_button, clicked_letter_text) => {
+    // ========================= includes methods works like our search bar functionality it will check if the text we pass through out the parameter exists in the particular elements then it wil return text conditionally clicked_letter_text is the string.fromcharcode(keybaord_code_into_string) ==========================
     if(current_word.includes(clicked_letter_text)) {
-        // ========================= includes methods works like our search bar functionality it will check if the text we pass through out the parameter exists in the particular elements then it wil return text conditionally clicked_letter_text is the string.fromcharcode(keybaord_code_into_string) =========================
         console.log(`${clicked_letter_text} exists on the word ${current_word}`);
         [...current_word].forEach((each_li_text, index)=>{
         // ================================================== conversion of randomly generated word (string) into an array and using spread operator we got arrays of each letters of randomly generated word e.g word is telescope the resulted array will be like ["t","e","l","e","s","c","o","p","e"]; like that then if the clickedbtn_text is same as the each_li_text means li elements's text then add the particular class and change the particular elements text using [index] indexed element ==================================================
